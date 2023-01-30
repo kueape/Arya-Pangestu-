@@ -1,0 +1,229 @@
+#include <iostream>
+using namespace std;
+
+void judul(){
+    cout << "===================================  "   << endl;
+    cout << "========== Konversi Suhu ==========  "   << endl;
+    cout << "===================================\n" << endl;}
+
+void cel(int a){
+    cout << a << ". Celcius     (C)" << endl;}
+void fah(int b){
+    cout << b << ". Fahrenheit  (F)" << endl;}
+void kel(int c){
+    cout << c << ". Kelvin      (K)" << endl;}
+void rea(int d){
+    cout << d << ". Reamur      (R)" << endl;}
+
+int nomor[4] = {1,2,3,4};
+
+void pilih(){
+    cout << "pilih : ";}
+
+void in(string satuan){
+    cout << "masukan nilai  " << satuan << " : " ;}
+
+void background(int b1, int b2, int b3){
+    if(b3 <= b1){
+    system("color 90");}
+    else if(b3 <= b2){
+    system("color e0");}
+    else{
+    system("color c0");}}
+
+struct mahasiswa{
+    string nama;
+    string kelas;
+    int nim;};
+
+int main(){
+    string kembali_menu;
+    int menu, menu1, menu2, menu3, menu4;
+    float c1, c2, c3, f1, f2, f3, k1, k2, k3, r1, r2, r3;
+
+    do{
+    judul();
+    struct mahasiswa mahasiswa1;
+
+    mahasiswa1.nama = "Arya Pangestu";
+    mahasiswa1.kelas = "Teknik Informatika B";
+    mahasiswa1.nim = 2230511069;
+
+    cout << "programed by "<< mahasiswa1.nama << " prodi " << mahasiswa1.kelas << " dengan NIM" << mahasiswa1.nim << endl;
+    cout << "\nPilih satuan awal \n" << endl;
+    cel(nomor[0]);
+    fah(nomor[1]);
+    kel(nomor[2]);
+    rea(nomor[3]);
+    pilih();
+    cin >> menu;
+
+
+
+    switch (menu){
+    case 1:
+        system("cls");
+        judul();
+        fah(nomor[0]);
+        kel(nomor[1]);
+        rea(nomor[2]);
+        pilih();
+        cin >> menu1;
+
+        switch (menu1){
+            case 1:
+            system("cls");
+            judul();
+            in("celcius");
+            cin >> c1;
+            cout << "hasil konversi         : " << (1.8*c1)+32 << " F" << endl;
+            background(20,30,c1);
+            break;
+
+            case 2:
+            system("cls");
+            judul();
+            in("celcius");
+            cin >> c2;
+            cout << "hasil konversi         : " << c2+273 << " K" << endl;
+            background(20,30,c2);
+            break;
+
+            case 3:
+            system("cls");
+            judul();
+            in("celcius");
+            cin >> c3;
+            cout << "hasil konversi         : " << 0.8*c3 << " R" << endl;
+            background(20,30,c3);
+            break;}
+            break;
+
+
+    case 2:
+    system("cls");
+    judul();
+    cel(nomor[0]);
+    kel(nomor[1]);
+    rea(nomor[2]);
+    pilih();
+    cin >> menu2;
+
+        switch (menu2){
+            case 1:
+            system("cls");
+            judul();
+            in("fahrenheit");
+            cin >> f1;
+            cout << "hasil konversi            : " << 0.5*(f1-32) << " C" << endl;
+            background(68,86,f1);
+            break;
+
+            case 2:
+            system("cls");
+            judul();
+            in("fahrenheit");
+            cin >> f2;
+            cout << "hasil konversi            : " << 0.5*(f2-32)+273 << " K " << endl;
+            background(68,86,f2);
+            break;
+
+            case 3:
+            system("cls");
+            judul();
+            in("fahrenheit");
+            cin >> f3;
+            cout << "hasil konversi            : " << 0.4*(f3-32) << " R" << endl;
+            background(68,86,f3);
+            break;}
+            break;
+
+
+    case 3:
+    system("cls");
+    judul();
+    cel(nomor[0]);
+    fah(nomor[1]);
+    rea(nomor[2]);
+    pilih();
+    cin >> menu3;
+
+        switch (menu3){
+            case 1:
+            system("cls");
+            judul();
+            in("kelvin");
+            cin >> k1;
+            cout << "hasil konversi        : " << k1-273 << " C" << endl;
+            background(293,303,k1);
+            break;
+
+            case 2:
+            system("cls");
+            judul();
+            in("kelvin");
+            cin >> k2;
+            cout << "hasil konversi        : " << 1.8*(k2-273)+32 << " F " << endl;
+            background(293,303,k2);
+            break;
+
+            case 3:
+            system("cls");
+            judul();
+            in("kelvin");
+            cin >> k3;
+            cout << "hasil konversi        : " << 0.8*(k3-273) << " R" << endl;
+            background(293,303,k3);
+            break;}
+            break;
+
+
+    case 4:
+    system("cls");
+    judul();
+    cel(nomor[0]);
+    fah(nomor[1]);
+    kel(nomor[2]);
+    pilih();
+    cin >> menu4;
+
+        switch (menu4){
+            case 1:
+            system("cls");
+            judul();
+            in("reamur");
+            cin >> r1;
+            cout << "hasil konversi        : " << 1.25*r1 << " C" << endl;
+            background(16,24,r1);
+            break;
+
+            case 2:
+            system("cls");
+            judul();
+            in("reamur");
+            cin >> r2;
+            cout << "hasil konversi        : " << 2.25*r2+32 << " F" << endl;
+            background(16,24,r2);
+            break;
+
+            case 3:
+            system("cls");
+            judul();
+            in("reamur");
+            cin >> r3;
+            cout << "hasil konversi        : " << 1.25*r3+273 << " K" << endl;
+            background(16,24,r3);
+            break;}
+            break;
+
+}
+    cout << "\n kembali ke menu awal y/n : ";
+    cin >> kembali_menu ;
+    system("cls");
+    system ("color 07");}
+
+    while (kembali_menu == "y");
+    cout << "\n program selesai" << endl;
+    cout << "  terima kasih" << endl;
+
+}
